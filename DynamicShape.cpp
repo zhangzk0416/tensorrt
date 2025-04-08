@@ -59,7 +59,7 @@ bool build_model() {
 		0.2, 0.2, 0.2
 	};
 	float layer1_bias_values[] = { 0.0 };
-
+	// 设置动态输入的位置必须设置成-1
 	nvinfer1::ITensor* input = network->addInput("image", nvinfer1::DataType::kFLOAT, nvinfer1::Dims4(-1, num_input, -1, -1));
 	nvinfer1::Weights layer1_weight = make_weights(layer1_weight_values, 9);
 	nvinfer1::Weights layer1_bias = make_weights(layer1_bias_values, 1);
