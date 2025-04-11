@@ -180,7 +180,23 @@ vector<string> load_labels(const char* file) {
 }
 
 void inference() {
-
+	/*
+	加载engine文件
+	创建runtime
+	反序列化
+	创建cuda流
+	创建执行上下文Context
+	创建输入变量并分配host和device空间
+	读取图片
+		读取数据
+		预处理
+		将数据放到gpu上
+		创建输出变量
+		分配空间
+	设置输入大小
+	推理
+	将输出放到host
+	*/
 	TRTLogger logger;
 	auto engine_data = load_file("F:/and/mlp.engine");
 	auto runtime = make_nvshared(nvinfer1::createInferRuntime(logger));
